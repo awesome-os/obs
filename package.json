@@ -1,0 +1,39 @@
+{
+  "name": "@awesome-os/obs",
+  "version": "0.1.0",
+  "description": "Debloated rolling-latest portable OBS Studio hydrated from awesome-os/b8g-ghost cas-v1 with a ~118 KB native 4-OS Lumi Hydration Splash launcher (Keep-Last-5, zero installer)",
+  "type": "module",
+  "main": "./src/index.mts",
+  "module": "./src/index.mts",
+  "types": "./src/index.mts",
+  "bin": {
+    "obs": "./src/cli.mts"
+  },
+  "exports": {
+    ".": "./src/index.mts",
+    "./hydrate": "./src/hydrate.mts",
+    "./cli": "./src/cli.mts"
+  },
+  "scripts": {
+    "test": "node --test test/obs-cas.test.mts"
+  },
+  "keywords": [
+    "obs",
+    "obs-studio",
+    "streaming",
+    "recording",
+    "debloated",
+    "b8g-ghost",
+    "awesome-os",
+    "cas",
+    "lumi-splash"
+  ],
+  "license": "GPL-2.0-or-later OR MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/awesome-os/obs.git"
+  },
+  "engines": {
+    "node": ">=22.18.0"
+  }
+}

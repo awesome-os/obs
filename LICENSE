@@ -1,0 +1,16 @@
+SPDX-License-Identifier: GPL-2.0-or-later OR MIT
+
+Copyright (c) 2026 Awesome-OS Contributors
+
+This repository's launcher, hydration scripts, and metadata are dual-licensed
+under either:
+
+- GNU General Public License v2.0 or later (GPL-2.0-or-later):
+  https://www.gnu.org/licenses/old-licenses/gpl-2.0.en.html
+- MIT License (MIT):
+  https://opensource.org/license/mit
+
+at your option.
+
+Upstream OBS Studio binaries hydrated from awesome-os/b8g-ghost cas-v1 remain
+governed by the upstream OBS Project GNU GPL-2.0-or-later license.

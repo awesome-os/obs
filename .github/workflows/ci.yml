@@ -1,0 +1,29 @@
+name: Awesome-OS OBS Studio CAS CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+
+      - name: Install zstd
+        run: sudo apt-get update -qq && sudo apt-get install -y -qq zstd
+
+      - name: Run OBS Studio CAS & CLI tests
+        run: node --test test/obs-cas.test.mts
+
+      - name: Compile native C11 Linux ELF64 launcher (gcc -Os -s)
+        run: |
+          mkdir -p dist
+          gcc -std=c11 -Os -s -Wall -Wextra src/obs_launcher.c -o dist/obs
+          ls -lh dist/obs
+          ./dist/obs --version
