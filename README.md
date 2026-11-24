@@ -2,6 +2,40 @@
 
 Debloated rolling-latest portable **OBS Studio** hydrated on demand from [`awesome-os/b8g-ghost`](https://github.com/awesome-os/b8g-ghost) (`cas-v1`) with a `~118 KB` native 4-OS C11 **Lumi Hydration Splash** launcher (Keep-Last-5, zero installer).
 
+## Quick Install & Usage
+
+### Windows (PowerShell 1-liner)
+
+```powershell
+irm https://github.com/awesome-os/obs/releases/latest/download/install.ps1 | iex
+```
+
+### Linux (x64 / ARM64) & macOS (Apple Silicon)
+
+```sh
+curl -fsSL https://github.com/awesome-os/obs/releases/latest/download/install.sh | sh
+```
+
+### CLI Usage
+
+```powershell
+# Inspect installed launcher version & help
+obs --version
+obs --help
+
+# Launch OBS Studio (with optional flags forwarded)
+obs
+obs --startrecording
+
+# Optional: store hydrated CAS layers on a custom drive/path
+$env:B8G_GHOST_CACHE_DIR = "D:\b8g-cas"   # POSIX: export B8G_GHOST_CACHE_DIR=/data/b8g-cas
+obs
+```
+
+### Releases & Verification
+
+- **Latest Release:** [`awesome-os/obs` Releases](https://github.com/awesome-os/obs/releases/latest) — includes `SHA256SUMS.txt` and the 5-OS matrix (`win64`, `linux-x64`, `linux-arm64`, `macos-arm64`, `wasm32-wasi`) built via [`awesome-os/maintenance-workflows`](https://github.com/awesome-os/maintenance-workflows).
+
 ## Highlights
 
 - **Zero Installer & Zero Bloat:** Hydrates directly into `~/.b8g/cas/obs/<sha256>/` and spawns `bin/64bit/obs64.exe` (Win64) / `obs` detached with `cwd = bin/64bit` so OBS Studio finds all plugins, data files, and CEF browser sources.
