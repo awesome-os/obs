@@ -1,0 +1,159 @@
+{
+  "schema": "holo-compiler-lockfile-v1",
+  "abiMagic": "0x33564742",
+  "casLayout": "v11",
+  "repo": "awesome-os/obs",
+  "targets": [
+    "linux-arm64",
+    "linux-x64",
+    "macos-arm64",
+    "win64"
+  ],
+  "generatedAt": "2026-11-24T23:53:02.473Z",
+  "dependencies": [
+    {
+      "id": "awesome-os/obs/install.ps1",
+      "kind": "object",
+      "version": "v0.2.0",
+      "target": "win64",
+      "sha512": "eb72bd05094e70c81ebea48f421bdaf71578053c3e6c0ec6bce7ecba054f02241f0c93427d03fd577324168f32d9071e4a8ca388ef3954bc7c0a9017d0f61ade",
+      "size": 348,
+      "executable": false,
+      "blob": "v11/files/eb/eb72bd05094e70c81ebea48f421bdaf71578053c3e6c0ec6bce7ecba054f02241f0c93427d03fd577324168f32d9071e4a8ca388ef3954bc7c0a9017d0f61ade",
+      "url": "https://github.com/awesome-os/obs/releases/download/v0.2.0/install.ps1",
+      "dependencies": []
+    },
+    {
+      "id": "awesome-os/obs/install.sh",
+      "kind": "object",
+      "version": "v0.2.0",
+      "target": "any",
+      "sha512": "9d4b099c453c3b83fb99aca241f8aff29cb7a7b0bf33b2b9bc0874b7f371df1ed95711169395d7eb156e2ba0f41fc06fb90a01f127ec09585b07e5c0f7085e94",
+      "size": 517,
+      "executable": true,
+      "blob": "v11/files/9d/9d4b099c453c3b83fb99aca241f8aff29cb7a7b0bf33b2b9bc0874b7f371df1ed95711169395d7eb156e2ba0f41fc06fb90a01f127ec09585b07e5c0f7085e94-exec",
+      "url": "https://github.com/awesome-os/obs/releases/download/v0.2.0/install.sh",
+      "dependencies": []
+    },
+    {
+      "id": "awesome-os/obs/obs-linux-arm64",
+      "kind": "ghost-launcher",
+      "version": "v0.1.0",
+      "target": "linux-arm64",
+      "sha512": "969b46167e0d8c4b2b225456e5b0b7365887b432dc8f1d49e9d7d6349636bcd9bd23148111f735ff6a6d5da515219ee36c48067b2b33352cb653d0e8c1777d33",
+      "size": 44064,
+      "executable": true,
+      "blob": "v11/files/96/969b46167e0d8c4b2b225456e5b0b7365887b432dc8f1d49e9d7d6349636bcd9bd23148111f735ff6a6d5da515219ee36c48067b2b33352cb653d0e8c1777d33-exec",
+      "url": "https://github.com/awesome-os/obs/releases/download/v0.1.0/obs-linux-arm64",
+      "dependencies": []
+    },
+    {
+      "id": "awesome-os/obs/obs-linux-arm64",
+      "kind": "bin",
+      "version": "v0.2.0",
+      "target": "linux-arm64",
+      "sha512": "c966c834d9298ecde9581f17df5cfe35c50db3a4240aaadabf946505054a73528a162bfb543ca11e489cf82be8bc55b3821dee47083b7d34f2055ff46b21ccba",
+      "size": 1176048,
+      "executable": true,
+      "blob": "v11/files/c9/c966c834d9298ecde9581f17df5cfe35c50db3a4240aaadabf946505054a73528a162bfb543ca11e489cf82be8bc55b3821dee47083b7d34f2055ff46b21ccba-exec",
+      "url": "https://github.com/awesome-os/obs/releases/download/v0.2.0/obs-linux-arm64",
+      "dependencies": []
+    },
+    {
+      "id": "awesome-os/obs/obs-linux-x64",
+      "kind": "ghost-launcher",
+      "version": "v0.1.0",
+      "target": "linux-x64",
+      "sha512": "00496b47ba434a11dca2bfe4b1997918de590eb50b25503a63c16961721a6c17072fc223105fa523b2c84bc08a29ab7063ac2095ea155b737b4ffc12c22091cc",
+      "size": 37848,
+      "executable": true,
+      "blob": "v11/files/00/00496b47ba434a11dca2bfe4b1997918de590eb50b25503a63c16961721a6c17072fc223105fa523b2c84bc08a29ab7063ac2095ea155b737b4ffc12c22091cc-exec",
+      "url": "https://github.com/awesome-os/obs/releases/download/v0.1.0/obs-linux-x64",
+      "dependencies": []
+    },
+    {
+      "id": "awesome-os/obs/obs-linux-x64",
+      "kind": "bin",
+      "version": "v0.2.0",
+      "target": "linux-x64",
+      "sha512": "64794bb87ebc143e9191305041cb1baba67235da4ac8f8c68e7ac1a03400b9e6804578db1a3ac49bad5b534dcb796ebe40c0d6489a53705c855e3d7c83123f0a",
+      "size": 1119824,
+      "executable": true,
+      "blob": "v11/files/64/64794bb87ebc143e9191305041cb1baba67235da4ac8f8c68e7ac1a03400b9e6804578db1a3ac49bad5b534dcb796ebe40c0d6489a53705c855e3d7c83123f0a-exec",
+      "url": "https://github.com/awesome-os/obs/releases/download/v0.2.0/obs-linux-x64",
+      "dependencies": []
+    },
+    {
+      "id": "awesome-os/obs/obs-macos-arm64",
+      "kind": "ghost-launcher",
+      "version": "v0.1.0",
+      "target": "macos-arm64",
+      "sha512": "42ce2f0477b4b97ca14e5265d6db6b1f8016d338cffa6175fc7df9fa6d3a8dd61f9f2dbb9e217182a4b686727baa82c24013f55f23773420051d274f8bac33c5",
+      "size": 51920,
+      "executable": true,
+      "blob": "v11/files/42/42ce2f0477b4b97ca14e5265d6db6b1f8016d338cffa6175fc7df9fa6d3a8dd61f9f2dbb9e217182a4b686727baa82c24013f55f23773420051d274f8bac33c5-exec",
+      "url": "https://github.com/awesome-os/obs/releases/download/v0.1.0/obs-macos-arm64",
+      "dependencies": []
+    },
+    {
+      "id": "awesome-os/obs/obs-macos-arm64",
+      "kind": "ghost-launcher",
+      "version": "v0.2.0",
+      "target": "macos-arm64",
+      "sha512": "33030ce331b8e04bee6034c34db6921201724cb1df0e9fb35e2732eaa9e83c634815de9bb94f652d7ff2819c013f591ae1cc7d9e9584e555a301a1fa934e0f64",
+      "size": 52176,
+      "executable": true,
+      "blob": "v11/files/33/33030ce331b8e04bee6034c34db6921201724cb1df0e9fb35e2732eaa9e83c634815de9bb94f652d7ff2819c013f591ae1cc7d9e9584e555a301a1fa934e0f64-exec",
+      "url": "https://github.com/awesome-os/obs/releases/download/v0.2.0/obs-macos-arm64",
+      "dependencies": []
+    },
+    {
+      "id": "awesome-os/obs/obs.exe",
+      "kind": "ghost-launcher",
+      "version": "v0.1.0",
+      "target": "win64",
+      "sha512": "1e62a4ec4dd881f3c138e2b3a1214e46fa27f0955d55ccab28466eb01bad02240fd090479984debdd3817d0020457b8ea0d58916d9356f8f0c06373cd9ca696d",
+      "size": 119296,
+      "executable": true,
+      "blob": "v11/files/1e/1e62a4ec4dd881f3c138e2b3a1214e46fa27f0955d55ccab28466eb01bad02240fd090479984debdd3817d0020457b8ea0d58916d9356f8f0c06373cd9ca696d-exec",
+      "url": "https://github.com/awesome-os/obs/releases/download/v0.1.0/obs.exe",
+      "dependencies": []
+    },
+    {
+      "id": "awesome-os/obs/obs.exe",
+      "kind": "ghost-launcher",
+      "version": "v0.2.0",
+      "target": "win64",
+      "sha512": "2883258cd73eb1de0592b9daf99365446b88b17144cf105d3c98abf8b0edd30b8c192e78dd912cd022b86d54a3d69b3e0e0000bb54251b11acd532d785cd4f43",
+      "size": 186880,
+      "executable": true,
+      "blob": "v11/files/28/2883258cd73eb1de0592b9daf99365446b88b17144cf105d3c98abf8b0edd30b8c192e78dd912cd022b86d54a3d69b3e0e0000bb54251b11acd532d785cd4f43-exec",
+      "url": "https://github.com/awesome-os/obs/releases/download/v0.2.0/obs.exe",
+      "dependencies": []
+    },
+    {
+      "id": "awesome-os/obs/obs.pdb",
+      "kind": "object",
+      "version": "v0.2.0",
+      "target": "win64",
+      "sha512": "1a122b2610465796de13187e3c013927205af44ae4101332960e670c65b6b6646577b2dc01870c8d233ad0e411b21fc669577b33bb42b22256c460ae8f5abdee",
+      "size": 1187840,
+      "executable": false,
+      "blob": "v11/files/1a/1a122b2610465796de13187e3c013927205af44ae4101332960e670c65b6b6646577b2dc01870c8d233ad0e411b21fc669577b33bb42b22256c460ae8f5abdee",
+      "url": "https://github.com/awesome-os/obs/releases/download/v0.2.0/obs.pdb",
+      "dependencies": []
+    },
+    {
+      "id": "awesome-os/obs/SHA256SUMS.txt",
+      "kind": "object",
+      "version": "v0.2.0",
+      "target": "any",
+      "sha512": "9311f983b99750e2378fc08392f740cbae609b68fd97e4905ec27c887ffeed1935259fbab511038a1aab1f7a6935d930f299b547b5dd8459fd31d009b7a8e0a4",
+      "size": 547,
+      "executable": false,
+      "blob": "v11/files/93/9311f983b99750e2378fc08392f740cbae609b68fd97e4905ec27c887ffeed1935259fbab511038a1aab1f7a6935d930f299b547b5dd8459fd31d009b7a8e0a4",
+      "url": "https://github.com/awesome-os/obs/releases/download/v0.2.0/SHA256SUMS.txt",
+      "dependencies": []
+    }
+  ]
+}
