@@ -41,6 +41,7 @@ obs
 - **Zero Installer & Zero Bloat:** Hydrates directly into `~/.b8g/cas/obs/<sha256>/` and spawns `bin/64bit/obs64.exe` (Win64) / `obs` detached with `cwd = bin/64bit` so OBS Studio finds all plugins, data files, and CEF browser sources.
 - **SHA-256 Verified Ghost CAS (`cas-v1`):** Downloads `obs-win64.tar.zst` (plus Linux/macOS targets), verifies SHA-256 before extraction, and supports Keep-Last-5 rollback via `OBS_GHOST_SHA256=<sha256>`.
 - **Instant `< 15 ms` Lumi Hydration Splash:** Native 4-OS C11 launcher (`src/obs_launcher.c`) displays the embedded Lumi White Dragon icon on Windows and streams live `GHOST_PROGRESS <pct> <msg>` updates during cold CAS hydration.
+- **Built-in Native Vertical Canvas & Multi-Stream (`frontend/vertical-canvas/`):** Hard-forked from [`Aitum/obs-vertical-canvas`](https://github.com/Aitum/obs-vertical-canvas) (`GPL-2.0`, credited to Aitum / Exeldro) and converted from an external plugin DLL into a permanent statically-linked OBS frontend core module (`obs_vertical_canvas_init()` / `obs_vertical_canvas_shutdown()`) with 1-click presets for **Twitch Horizontal (1920x1080@60)** + **TikTok Live / YouTube Shorts / Instagram Reels / Kick Vertical (1080x1920)**, **Linked Scene Switching**, **Shared Encoder**, and **Backtrack Replay Buffer** enabled by default. See [`docs/VERTICAL-CANVAS-BUILTIN.md`](docs/VERTICAL-CANVAS-BUILTIN.md).
 - **Erasable TypeScript Direct Execution:** Zero build/transpile step (`erasableSyntaxOnly: true`, `noEmit: true`), runs directly on Node 22.18+ / Node 24.
 
 ## Usage
@@ -95,6 +96,8 @@ zig cc -target aarch64-macos -std=c11 -Os -s -Wall -Wextra src/obs_launcher.c -o
 ## License
 
 Dual-licensed under **GPL-2.0-or-later OR MIT**.
+
+The built-in native Vertical Canvas module under [`frontend/vertical-canvas/`](frontend/vertical-canvas/) is hard-forked from [`Aitum/obs-vertical-canvas`](https://github.com/Aitum/obs-vertical-canvas) (Copyright © Aitum / Exeldro) and licensed under **GPL-2.0** (see [`frontend/vertical-canvas/LICENSE`](frontend/vertical-canvas/LICENSE)).
 
 ## Quick Install & Run (Windows / Linux / macOS)
 
