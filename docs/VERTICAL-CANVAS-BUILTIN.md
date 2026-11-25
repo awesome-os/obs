@@ -70,3 +70,25 @@ Compile and execute the standalone presets & core header smoke test natively wit
 ## 4. License & Attribution
 
 The built-in Vertical Canvas module in `frontend/vertical-canvas/` is a derivative work of [`Aitum/obs-vertical-canvas`](https://github.com/Aitum/obs-vertical-canvas) (Copyright © Aitum / Exeldro) and is distributed under the **GNU General Public License v2.0 (GPL-2.0)** in compliance with Section 2 of the GPL-2.0. See [`frontend/vertical-canvas/LICENSE`](../frontend/vertical-canvas/LICENSE).
+
+
+---
+
+## Crash-Proof Twitch Dock Session Guardian
+
+Upstream OBS stores Twitch browser docks (`twitchChat`, `twitchFeed`, `twitchInfo`, `twitchStats`) inside `[Twitch] DockState=` in `basic.ini`. After a crash, Safe Mode (which disables `obs-browser`) or a stale CEF `LOCK` file prevents those docks from mounting, and the subsequent clean exit overwrites `[Twitch] DockState=` with an empty layout.
+
+[`frontend/vertical-canvas/dock-session-guardian.hpp`](../frontend/vertical-canvas/dock-session-guardian.hpp) / [`.cpp`](../frontend/vertical-canvas/dock-session-guardian.cpp) permanently prevents dock loss via three C/C++ hooks:
+
+1. **`obs_dock_guardian_pre_boot(profile_dir, cookies_dir)`** — Purges stale Chromium/CEF `LOCK` / `SingletonLock` / `SingletonCookie` files before CEF starts and atomically restores `[Twitch] DockState=` + `[Auth] Type=Twitch` from `dock-state.last-good.json` if `basic.ini` was wiped or truncated.
+2. **`obs_dock_guardian_snapshot_if_healthy(profile_dir, safe_mode, twitch_docks_mounted)`** — Atomically snapshots valid `[Twitch] DockState=` and `[General] DockState=` to `dock-state.last-good.json` only when not in Safe Mode and Twitch docks actually mounted.
+3. **`obs_dock_guardian_guard_shutdown(profile_dir, safe_mode, twitch_docks_mounted)`** — Guards `OBSBasic::SaveProject()` so exiting Safe Mode or a degraded Twitch session never overwrites a previously healthy `[Twitch] DockState=`.
+
+### Verification
+
+```powershell
+.\bin\zig.cmd c++ -std=c++17 -O2 -Wall -Wextra -Werror `
+  frontend/vertical-canvas/dock-session-guardian.cpp `
+  frontend/vertical-canvas/tests/dock-guardian-test.cpp `
+  -I frontend/vertical-canvas -o dock-guardian-test.exe && .\dock-guardian-test.exe
+```
