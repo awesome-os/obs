@@ -13,10 +13,12 @@ if(CMAKE_PROJECT_NAME STREQUAL "obs-studio" OR TARGET OBS::libobs)
   set(OBS_VERTICAL_CANVAS_BUILD_FRONTEND ON)
 endif()
 
-# Pure C++17 Multi-Stream Presets library (zero Qt/libobs dependencies)
+# Pure C++17 Multi-Stream Presets & Crash-Proof Dock Guardian library (zero Qt/libobs dependencies)
 add_library(obs-vertical-canvas-presets STATIC
   multistream-presets.cpp
   multistream-presets.hpp
+  dock-session-guardian.cpp
+  dock-session-guardian.hpp
 )
 target_compile_features(obs-vertical-canvas-presets PUBLIC cxx_std_17)
 target_include_directories(obs-vertical-canvas-presets PUBLIC "${CMAKE_CURRENT_SOURCE_DIR}")
@@ -106,4 +108,10 @@ if(OBS_VERTICAL_CANVAS_BUILD_TESTS)
   )
   target_link_libraries(vertical-canvas-presets-test PRIVATE obs-vertical-canvas-presets)
   add_test(NAME vertical-canvas-presets-test COMMAND vertical-canvas-presets-test)
+
+  add_executable(dock-guardian-test
+    tests/dock-guardian-test.cpp
+  )
+  target_link_libraries(dock-guardian-test PRIVATE obs-vertical-canvas-presets)
+  add_test(NAME dock-guardian-test COMMAND dock-guardian-test)
 endif()
