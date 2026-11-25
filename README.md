@@ -95,3 +95,13 @@ zig cc -target aarch64-macos -std=c11 -Os -s -Wall -Wextra src/obs_launcher.c -o
 ## License
 
 Dual-licensed under **GPL-2.0-or-later OR MIT**.
+
+## Quick Install & Run (Windows / Linux / macOS)
+
+```sh
+# Install / hydrate from v11 CAS via holo-pm
+holo-pm install repository://github.com/awesome-os/obs@main
+
+# Or project & run directly via holo-project (0-byte hardlink)
+holo-project "project://node/obs?from=repository://github.com/awesome-os/obs@main"
+```
