@@ -1,3 +1,6 @@
+> [!NOTE]
+> Consolidated into the unified Holo v11 monorepo at https://github.com/awesome-os/awesome-os (all existing v11 CAS release assets remain downloadable).
+
 # `@awesome-os/obs`
 
 Debloated rolling-latest portable **OBS Studio** hydrated on demand from [`awesome-os/b8g-ghost`](https://github.com/awesome-os/b8g-ghost) (`cas-v1`) with a `~118 KB` native 4-OS C11 **Lumi Hydration Splash** launcher (Keep-Last-5, zero installer).
